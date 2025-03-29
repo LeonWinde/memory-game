@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "Courier New", Courier, monospace;
+  background: url(./wood-flooring.png);
+  overflow: hidden;
+}
+
+#memory {
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  padding: 2em;
+  background: radial-gradient(circle at 0% 0%, #deb887, brown, rgb(43, 13, 13));
+  margin: 0.5em 0;
+  width: 1200px;
+  min-height: 800px;
+  perspective: 1000px;
+  perspective-origin: left;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 40px;
+}
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid #000; */
+  width: 130px;
+  aspect-ratio: 3/5;
+}
+
+.card {
+  /* width: 200px; */
+  aspect-ratio: 3/5;
+  width: 90%;
+  transform-style: preserve-3d;
+  position: relative;
+  transition: transform ease-in-out 1s;
+  box-shadow: 8px 8px 30px rgba(0, 0, 0, 0.3);
+}
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  border: 4px solid azure;
+  border-radius: 10px;
+  box-shadow: 8px 8px 30px rgba(0, 0, 0, 0.3);
+}
+.front {
+  background-color: rgb(46, 218, 103);
+}
+.back {
+  background-color: aqua;
+  transform: rotateY(-180deg);
+  font-size: 2em;
+  font-weight: bold;
+}
+.flip {
+  transform: rotateY(-180deg);
+}
+.scores {
+  padding: 0.5em;
+  background-color: #deb887;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  margin: 0.5em 0;
+  width: 80%;
+  min-height: 100px;
+  display: flex;
+  justify-content: space-around;
+}
+.game-end {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: 1;
+}
+.card-logo-container {
+  width: 80%;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  background-color: azure;
+  background-image: url(./four-pt-star.svg);
+  background-position: center center;
+}
+#game-over.hidden {
+  display: none;
+}
+#game-over {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1em;
+}
+.score {
+  padding: 0.5em;
+  transition: all 0.5s ease-in-out;
+}
+.active {
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+#restartButton {
+  padding: 0.5em;
+  background-color: #deb887;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+#restartButton:hover {
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+}
