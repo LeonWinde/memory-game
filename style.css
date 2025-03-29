@@ -31,6 +31,7 @@ body {
   align-items: flex-start;
   gap: 40px;
 }
+
 .card-container {
   display: flex;
   align-items: center;
@@ -65,6 +66,15 @@ body {
 .front {
   background-color: rgb(46, 218, 103);
 }
+.card-logo-container {
+  width: 80%;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  background-color: azure;
+  background-image: url(./four-pt-star.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
 .back {
   background-color: aqua;
   transform: rotateY(-180deg);
@@ -84,7 +94,23 @@ body {
   min-height: 100px;
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
+.scores .score {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 0.5em;
+  transition: all 0.5s ease-in-out;
+}
+
+.active {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+
 .game-end {
   display: flex;
   flex-direction: column;
@@ -98,14 +124,7 @@ body {
   position: absolute;
   z-index: 1;
 }
-.card-logo-container {
-  width: 80%;
-  aspect-ratio: 1;
-  border-radius: 100%;
-  background-color: azure;
-  background-image: url(./four-pt-star.svg);
-  background-position: center center;
-}
+
 #game-over.hidden {
   display: none;
 }
@@ -122,17 +141,19 @@ body {
   flex-direction: column;
   gap: 1em;
 }
-.score {
-  padding: 0.5em;
-  transition: all 0.5s ease-in-out;
-}
-.active {
-  font-weight: 700;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+#game-over h1 {
+  font-size: 3em;
+  font-weight: bold;
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 20px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+#game-over p {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
 #restartButton {
   padding: 0.5em;
   background-color: #deb887;
